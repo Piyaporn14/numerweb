@@ -13,7 +13,7 @@ const Home = () => {
     <div>
         <Topbar />
         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src = {logo} className="App-logo" alt="logo" />
             <p>
             <div className = "App-link"  > Numerical React Project</div>
             </p>
