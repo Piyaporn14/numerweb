@@ -46,7 +46,7 @@ const Topbar = () => {
                         <DropdownItem href="/Cholesky" >Cholesky</DropdownItem>
                         <DropdownItem href="/LUDecompose" >LUDecompose</DropdownItem>
                         <DropdownItem href="/GaussSeidel" >Gauss-Seidel</DropdownItem>
-                        <DropdownItem href="/Bisection" >Jacobi's Method</DropdownItem>
+                        <DropdownItem href="/Jacobi" >Jacobi's Method</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </Nav>
