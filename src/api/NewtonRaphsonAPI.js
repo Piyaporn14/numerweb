@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
 
+
 router.post('/api/NewtonRaphsonAPI', (req, res) => {
     var eq = math.compile(req.body.equation);
     var diffeq = math.derivative(req.body.equation, 'x');
