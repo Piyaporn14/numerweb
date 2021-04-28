@@ -55,7 +55,7 @@ router.post("/api/ConjugateGradientAPI", (req, res) => {
   solution = x;
 
   console.log(solution);
-
+  console.log(math.multiply(MatrixA, solution));
   res.json({
     out: solution,
   });

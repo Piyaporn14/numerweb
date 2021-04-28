@@ -40,9 +40,9 @@ function matrixdcp(A, update) {
 			var Ai = A[i] 
 			Acpyi = new Array(Ai.length)
 			for (j=0; j<Ai.length; j+=1) Acpyi[j] = Ai[j]
-			Acpy[i] = Acpyi
+			Acpy[i] = Acpyi;
 		}
-		A = Acpy
+		A = Acpy;
 	}
  
 	var tiny = 0 
@@ -115,7 +115,7 @@ function matrixsubstitution(a, b, update) {
 
 
     console.log(solution);
-    
+    console.log(math.multiply(MatrixA, solution));
 
     res.json({
         out: solution

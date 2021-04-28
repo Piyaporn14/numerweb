@@ -8,8 +8,9 @@ router.post("/api/JacobiAPI", (req, res) => {
   var MatrixX = [].concat(...req.body.matrixX);
   var solution = [];
   var n = MatrixA.length;
-  var x = [];
-  var temp;
+
+  x = new Array(n);
+
   var xold;
   epsilon = new Array(n);
   do {
@@ -23,10 +24,14 @@ router.post("/api/JacobiAPI", (req, res) => {
           sum = sum + MatrixA[i][j] * MatrixX[j];
         }
       }
-      temp[i] = (MatrixB[i] - sum) / MatrixA[i][i]; //update x[i]
+      x[i] = (MatrixB[i] - sum) / MatrixA[i][i]; //update x[i]
     }
-    x = JSON.parse(JSON.stringify(temp));
+    
   } while (error(x, xold));
+
+    for (i = 0; i < x.length; i++) {
+    solution.push(x[i]);
+    }
 
   function error(xnew, xold) {
     for (var i = 0; i < xnew.length; i++) {
@@ -40,9 +45,8 @@ router.post("/api/JacobiAPI", (req, res) => {
     return false;
   }
 
-  solution = x;
-  console.log(solution);
-
+ console.log(solution);
+ console.log(math.multiply(MatrixA, solution));
   res.json({
     out: solution,
   });
