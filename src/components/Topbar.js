@@ -11,8 +11,10 @@ const Topbar = () => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [LinearMenu, setLinearMenuOpen] = useState(false);
+    const [InterpolationMenu, setInterpolationMenuOpen] = useState(false);
     const RootOfEquationToggle = () => setDropdownOpen(prevState => !prevState);
     const LinearMenuToggle = () => setLinearMenuOpen(prevState => !prevState);
+    const InterpolationMenuToggle = () => setInterpolationMenuOpen(prevState => !prevState);
 
       return (
         <div>
@@ -42,7 +44,6 @@ const Topbar = () => {
                         <DropdownItem href="/CramersRule" >Cramer's Rule</DropdownItem>
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
                         <DropdownItem href="/GaussJordan " >Gauss-Jordan Elimination</DropdownItem>
-                        <DropdownItem href="/ConjugateGradient" >Conjugate Gradient</DropdownItem>
                         <DropdownItem href="/Cholesky" >Cholesky</DropdownItem>
                         <DropdownItem href="/LUDecompose" >LUDecompose</DropdownItem>
                         <DropdownItem href="/GaussSeidel" >Gauss-Seidel</DropdownItem>
@@ -50,7 +51,17 @@ const Topbar = () => {
                     </DropdownMenu>
                 </Dropdown>
                 <span>&nbsp;&nbsp;</span>
-          <Button color="secondary" href="/Newton-Divided-Difference" >Interpolation - Newton-Divided Difference</Button>
+         
+          <Dropdown isOpen={InterpolationMenu} toggle={InterpolationMenuToggle}>
+                    <DropdownToggle color="secondary" caret>
+                        Interpolation
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Methods</DropdownItem>
+                        <DropdownItem href="/NewtonInterpolation" >Newton Interpolation</DropdownItem>
+                        
+                    </DropdownMenu>
+                </Dropdown>
          </Nav>
          <Navbar.Brand href="http://localhost:5000/api-docs/">Swagger</Navbar.Brand>
             </Navbar>
